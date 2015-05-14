@@ -19,7 +19,7 @@
 	ext._shutdown = function() {};
 	
 	ext._getStatus = function() {
-		return {status:2, msg: 'Ready - Version 1.0 (Minecraft 1.8.3) - By: Mrcomputer1'};
+		return {status:2, msg: 'Ready - Version 1.0.1 (Minecraft 1.8.3) - By: Mrcomputer1'};
 	};
 	
 	ext.isOnline = function(serverIP, serverPORT, callback) {
@@ -194,7 +194,7 @@
 		menus: {
 			mcVersion: ["1.8.3-1.8", "1.8-pre3", "1.8-pre2", "1.8-pre1", "1.7.10-1.7.6", "1.7.5-1.7.1"]
 		},
-		url: 'http://Mrcomputer1.github.io/Mrcomputer1ScratchExtensions/MinecraftExtension.html'
+		url: 'http://Mrcomputer1.github.io/MinecraftServerCheckerExtension/'
 	};
 	
 	ScratchExtensions.register('Minecraft Extension', descriptor, ext);
