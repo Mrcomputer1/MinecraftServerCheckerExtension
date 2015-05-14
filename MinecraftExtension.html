@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Minecraft Extension by Mrcomputer1</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Minecraft Extension</h1>
+        <p>A scratch extension thats lets you check minecraft server status</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/Mrcomputer1/Mrcomputer1ScratchExtensions" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/Mrcomputer1/Mrcomputer1ScratchExtensions/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/Mrcomputer1/Mrcomputer1ScratchExtensions/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a id="welcome-to-minecraft-extension" class="anchor" href="#welcome-to-minecraft-extension" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to Minecraft Extension</h1>
+
+<p><a href="http://scratchx.org/?url=http://mrcomputer1.github.io/Mrcomputer1ScratchExtensions/MinecraftExtension.js#scratch">Use the extension</a> - Loads the extension on <a href="http://scratchx.org">http://scratchx.org</a></p>
+
+<p><a href="http://github.com/mrcomputer1/Mrcomputer1ScratchExtensions/blob/gh-pages/MinecraftExtension.js">Source Code</a> - Shows the source code!</p>
+
+<p><a href="http://github.com/Mrcomputer1/Mrcomputer1ScratchExtensions/issues">Issue Tracker</a> - Opens the issue tracker</p>
+
+<p>This extensions uses <a href="http://MCApi.us">http://MCApi.us</a> API to check the server status</p>
+
+<h1>
+<a id="example-project-server-checker" class="anchor" href="#example-project-server-checker" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example Project (Server Checker)</h1>
+
+<p><a href="examples/MinecraftExtension/ServerChecker.sbx">Download</a></p>
+
+<p><a href="http://scratchx.org/?url=http://Mrcomputer1.github.io/Mrcomputer1ScratchExtensions/examples/MinecraftExtension/ServerChecker.sbx#scratch">Use</a></p>
+
+<h1>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How To Use</h1>
+
+<h2>
+<a id="is---online" class="anchor" href="#is---online" aria-hidden="true"><span class="octicon octicon-link"></span></a>Is [] () Online?</h2>
+
+<p><img src="http://i58.tinypic.com/154hgt4.png" alt="Is [] (25565) Online?"></p>
+
+<p>Is [SERVER IP] (SERVER PORT) Online?</p>
+
+<p>If it returns 1 it is online if it returns 0 it is offline</p>
+
+<h2>
+<a id="motd-of--" class="anchor" href="#motd-of--" aria-hidden="true"><span class="octicon octicon-link"></span></a>Motd of [] ()</h2>
+
+<p><img src="http://i58.tinypic.com/2lnu3bq.png" alt="Motd of [] (25565)"></p>
+
+<p>Motd of [SERVER IP] (SERVER PORT)</p>
+
+<p>It should return the message or it will return 0</p>
+
+<h2>
+<a id="online-players-of--" class="anchor" href="#online-players-of--" aria-hidden="true"><span class="octicon octicon-link"></span></a>Online players of [] ()</h2>
+
+<p><img src="http://i60.tinypic.com/2072jps.png" alt="Online players of [] (25565)"></p>
+
+<p>Online players of [SERVER IP] (SERVER PORT)</p>
+
+<p>It should return the online player count of 0</p>
+
+<h2>
+<a id="max-players-of--" class="anchor" href="#max-players-of--" aria-hidden="true"><span class="octicon octicon-link"></span></a>Max players of [] ()</h2>
+
+<p><img src="http://i61.tinypic.com/35cr66f.png" alt="Max players of [] (25565)"></p>
+
+<p>Max players of [SERVER IP] (SERVER PORT)</p>
+
+<p>Returns max players or 0</p>
+
+<h2>
+<a id="server-software-of--" class="anchor" href="#server-software-of--" aria-hidden="true"><span class="octicon octicon-link"></span></a>Server Software of [] ()</h2>
+
+<p><img src="http://i60.tinypic.com/20pvarr.png" alt="Server Software of [] (25565)"></p>
+
+<p>Server Software of [SERVER IP] (SERVER PORT)</p>
+
+<p>Returns server software or 0</p>
+
+<h2>
+<a id="is----v" class="anchor" href="#is----v" aria-hidden="true"><span class="octicon octicon-link"></span></a>Is [] () [ v]</h2>
+
+<p><img src="http://i62.tinypic.com/20p8ni9.png" alt="Is [] (25565) [1.8.3-1.8 v]"></p>
+
+<p>Is [SERVER IP] (SERVER PORT) [VERSION v]</p>
+
+<p>Returns 1 if it is that version or 0 if it is not that version it will return -1 if it is offline</p>
+
+<h2>
+<a id="get-version--" class="anchor" href="#get-version--" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get Version [] ()</h2>
+
+<p><img src="http://i60.tinypic.com/2czr8s8.png" alt="Get Version [] (25565)"></p>
+
+<p>Get Version [SERVER IP] (SERVER PORT)</p>
+
+<p>Returns 1.8.3, 1.8-pre3, 1.8-pre2, 1.8-pre1, 1.7.10-1.7.6, 1.7.5-1.7.1pre or 0</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/Mrcomputer1">Mrcomputer1</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
