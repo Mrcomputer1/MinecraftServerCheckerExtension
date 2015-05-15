@@ -197,5 +197,5 @@
 		url: 'http://Mrcomputer1.github.io/MinecraftServerCheckerExtension/'
 	};
 	
-	ScratchExtensions.register('Minecraft Extension', descriptor, ext);
+	ScratchExtensions.register('Minecraft Server Checker', descriptor, ext);
 })({});
