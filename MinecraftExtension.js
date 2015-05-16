@@ -183,7 +183,7 @@
 	
 	ext.getMojangStatus(service, callback) = function (){
 		$.ajax({
-			  async: true,
+			  async: false,
               url: 'http://status.mojang.com/check?service='+service,
               dataType: 'jsonp',
               success: function( data ) {
