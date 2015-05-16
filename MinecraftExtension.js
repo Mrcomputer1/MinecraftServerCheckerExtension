@@ -183,14 +183,14 @@
 	
 	ext.getMojangStatus(service, callback) = function (){
 		$.ajax({
-			  async: true
+			  async: true,
               url: 'http://status.mojang.com/check?service='+service,
               dataType: 'jsonp',
               success: function( data ) {
                   callback(data[service]);
               }
         });
-	}
+	};
 	
 	var descriptor = {
 		blocks: [
