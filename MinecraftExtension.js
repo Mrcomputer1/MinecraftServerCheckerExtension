@@ -182,12 +182,21 @@
 	};
 	
 	ext.getMojangStatus = function (status, callback){
-		$.ajax({
+		/*$.ajax({
 			  async: false,
               url: 'http://status.mojang.com/check?service='+service,
               dataType: 'jsonp',
               success: function( data ) {
                   callback(data[service]);
+              }
+        });*/
+		$.ajax({
+              url: 'http://api.openweathermap.org/data/2.5/weather?q='+service+'&units=imperial',
+              dataType: 'jsonp',
+              success: function( weather_data ) {
+                  // Got the data - parse it and return the temperature
+                  temperature = weather_data['main']['temp'];
+                  callback(temperature);
               }
         });
 	};
