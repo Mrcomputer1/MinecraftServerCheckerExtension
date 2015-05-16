@@ -181,6 +181,17 @@
 		});
 	};
 	
+	ext.getMojangStatus(service, callback) = function (){
+		$.ajax({
+			  async: true
+              url: 'http://status.mojang.com/check?service='+service,
+              dataType: 'jsonp',
+              success: function( data ) {
+                  callback(data[service]);
+              }
+        });
+	}
+	
 	var descriptor = {
 		blocks: [
 			['R', 'Is %s %n online?', 'isOnline', '', 25565],
@@ -190,6 +201,7 @@
 			['R', 'Server Software of %s %n', 'getServerSoftware', '', 25565],
 			['R', 'Is %s %n %m.mcVersion', 'isVersion', '', 25565, '1.8.3-1.8'],
 			['R', 'Get Version %s %n', 'getVersion', '', 25565],
+			['R', 'Get Mojang Status %s', 'getMojangStatus', 'minecraft.net'],
 		],
 		menus: {
 			mcVersion: ["1.8.3-1.8", "1.8-pre3", "1.8-pre2", "1.8-pre1", "1.7.10-1.7.6", "1.7.5-1.7.1"]
