@@ -22,8 +22,6 @@
 		return {status:2, msg: 'Ready - Version 1.0.1 (Minecraft 1.8.3) - By: Mrcomputer1'};
 	};
 	
-	ext.service = "";
-	
 	ext.isOnline = function(serverIP, serverPORT, callback) {
 		MinecraftAPI.getServerStatus(serverIP, {
 			port: serverPORT
@@ -183,14 +181,13 @@
 		});
 	};
 	
-	ext.getMojangStatus(service, callback) = function (){
-		ext.service = service;
+	ext.getMojangStatus = function (status, callback){
 		$.ajax({
 			  async: true,
               url: 'http://status.mojang.com/check?service='+service,
               dataType: 'jsonp',
               success: function( data ) {
-                  callback(data[ext.service]);
+                  callback(data[service]);
               }
         });
 	};
