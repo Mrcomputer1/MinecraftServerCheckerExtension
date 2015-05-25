@@ -16,10 +16,12 @@
 
     });
 	
+	ext.alertOnOldVersion = true;
+	
 	ext._shutdown = function() {};
 	
 	ext._getStatus = function() {
-		return {status:2, msg: 'Ready - Version 1.0.1 (Minecraft 1.8.3) - By: Mrcomputer1'};
+		return {status:2, msg: 'Ready - Version 1.0.2 (Minecraft 1.8.5) - By: Mrcomputer1'};
 	};
 	
 	ext.isOnline = function(serverIP, serverPORT, callback) {
@@ -119,6 +121,12 @@
 			var p = 0;
 			if(version === "1.8.5-1.8"){
 				p = 47;
+			}else if(version === "1.8.3-1.8"){
+				p = 47;
+				if(ext.alertOnOldVer === true){
+					alert("Please change 1.8.3-1.8 to 1.8.5-1.8 in the IS [] () [1.8.3-1.8 v] block");
+					ext.alertOnOldVer = false;
+				}
 			}else if(version === "1.8-pre3"){
 				p = 46;
 			}else if(version === "1.8-pre2"){
