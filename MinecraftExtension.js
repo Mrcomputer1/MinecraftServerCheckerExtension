@@ -123,7 +123,7 @@
 				p = 47;
 			}else if(version === "1.8.3-1.8"){
 				p = 47;
-				if(ext.alertOnOldVer === true){
+				if(ext.alertOnOldVersion === true){
 					alert("Please change 1.8.3-1.8 to 1.8.5-1.8 in the IS [] () [1.8.3-1.8 v] block");
 					ext.alertOnOldVer = false;
 				}
