@@ -21,7 +21,7 @@
 	ext._shutdown = function() {};
 	
 	ext._getStatus = function() {
-		return {status:2, msg: 'Ready - Version 1.0.3 (Minecraft 1.8.6) - By: Mrcomputer1'};
+		return {status:2, msg: 'Ready - Version 1.0.4 (Minecraft 1.8.6) - By: Mrcomputer1'};
 	};
 	
 	ext.isOnline = function(serverIP, serverPORT, callback) {
@@ -208,8 +208,10 @@
 			
 			if(data[id][statusOf] === "green"){
 				callback(1);
-			}else{
+			}else if(data[id][statusOf] === "yellow"){
 				callback(0);
+			}else{
+				callback(-1);
 			}
 		}, "json");
 	};
