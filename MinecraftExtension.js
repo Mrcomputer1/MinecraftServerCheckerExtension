@@ -21,7 +21,7 @@
 	ext._shutdown = function() {};
 	
 	ext._getStatus = function() {
-		return {status:2, msg: 'Ready - Version 1.0.2 (Minecraft 1.8.5) - By: Mrcomputer1'};
+		return {status:2, msg: 'Ready - Version 1.0.3 (Minecraft 1.8.6) - By: Mrcomputer1'};
 	};
 	
 	ext.isOnline = function(serverIP, serverPORT, callback) {
@@ -38,14 +38,6 @@
 				return 0;
 			}
 		});
-		/*$.get("http://mcapi.us/server/status?ip=" + serverIP + "&port=" + serverPORT, function( data ) {
-			var obj = JSON.parse(data);
-			if(obj.online === true){
-				return 1;
-			}else{
-				return 0;
-			}
-		});*/
 	};
 	
 	ext.getMotd = function(serverIP, serverPORT, callback) {
@@ -189,6 +181,99 @@
 		});
 	};
 	
+	ext.getMojangStatus = function(statusOf, callback){
+		$.get("http://status.mojang.com/check/", {}, function(data){
+			var id = -1;
+			if(statusOf === "minecraft.net"){
+				id = 0;
+			}else if(statusOf === "session.minecraft.net"){
+				id = 1;
+			}else if(statusOf === "account.mojang.com"){
+				id = 2;
+			}else if(statusOf === "auth.mojang.com"){
+				id = 3;
+			}else if(statusOf === "skins.minecraft.net"){
+				id = 4;
+			}else if(statusOf === "authserver.mojang.com"){
+				id = 5;
+			}else if(statusOf === "sessionserver.mojang.com"){
+				id = 6;
+			}else if(statusOf === "api.mojang.com"){
+				id = 7;
+			}else if(statusOf === "textures.minecraft.net"){
+				id = 8;
+			}else{
+				alert("Script Error!");
+			}
+			
+			if(data[id][statusOf] === "green"){
+				callback(1);
+			}else{
+				callback(0);
+			}
+		}, "json");
+	};
+	
+	ext.getServerIP = function(server){
+		if(server === "Mineplex US"){
+			return "us.mineplex.com";
+		}else if(server === "Mineplex EU"){
+			return "eu.mineplex.com";
+		}else if(server === "Shotbow Network US"){
+			return "us.shotbow.net";
+		}else if(server === "Shotbow Network EU"){
+			return "eu.shotbow.net";
+		}else if(server === "Minecade"){
+			return "mineca.de";
+		}else if(server === "The Nexus MC US"){
+			return "hub.thenexusmc.com";
+		}else if(server === "The Nexus MC EU"){
+			return "eu.thenexusmc.com";
+			//Other //V//
+		}else if(server === "--[US]--"){
+			return "";
+		}else if(server === "--[EU]--"){
+			return "";
+		}else if(server === "--[Unknown]--"){
+			return "";
+		}else if(server === "----"){
+			return "";
+		}else if(server === "Suggest a server (Run the block, disable popup blocker)"){
+			window.open("http://goo.gl/forms/2DEyZWFDQd", "_blank", "channelmode=yes,height=550,width=720,location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no");
+			return "";
+		}
+	};
+	
+	ext.getServerPort = function(server){
+		if(server === "Mineplex US"){
+			return 25565;
+		}else if(server === "Mineplex EU"){
+			return 25565;
+		}else if(server === "Shotbow Network US"){
+			return 25565;
+		}else if(server === "Shotbow Network EU"){
+			return 25565;
+		}else if(server === "Minecade"){
+			return 25565;
+		}else if(server === "The Nexus MC US"){
+			return 25565;
+		}else if(server === "The Nexus MC EU"){
+			return 25565;
+			//Other //V//
+		}else if(server === "--[US]--"){
+			return "";
+		}else if(server === "--[EU]--"){
+			return "";
+		}else if(server === "--[Unknown]--"){
+			return "";
+		}else if(server === "----"){
+			return "";
+		}else if(server === "Suggest a server (Run the block, disable popup blocker)"){
+			window.open("http://goo.gl/forms/2DEyZWFDQd", "_blank", "channelmode=yes,height=550,width=720,location=no,menubar=no,resizable=no,scrollbars=no,status=no,toolbar=no");
+			return "";
+		}
+	};
+	
 	var descriptor = {
 		blocks: [
 			['R', 'Is %s %n online?', 'isOnline', '', 25565],
@@ -198,9 +283,14 @@
 			['R', 'Server Software of %s %n', 'getServerSoftware', '', 25565],
 			['R', 'Is %s %n %m.mcVersion', 'isVersion', '', 25565, '1.8.5-1.8'],
 			['R', 'Get Version %s %n', 'getVersion', '', 25565],
+			['R', 'Get Mojang Status %m.mojangStatus', 'getMojangStatus', 'minecraft.net'],
+			['r', 'Server IP %m.server', 'getServerIP', ''],
+			['r', 'Server Port %m.server', 'getServerPort', ''],
 		],
 		menus: {
-			mcVersion: ["1.8.5-1.8", "1.8-pre3", "1.8-pre2", "1.8-pre1", "1.7.10-1.7.6", "1.7.5-1.7.1"]
+			mcVersion: ["1.8.5-1.8", "1.8-pre3", "1.8-pre2", "1.8-pre1", "1.7.10-1.7.6", "1.7.5-1.7.1"],
+			mojangStatus: ["minecraft.net", "session.minecraft.net", "account.mojang.com", "auth.mojang.com", "skins.minecraft.net", "authserver.mojang.com", "sessionserver.mojang.com", "api.mojang.com", "textures.minecraft.net"],
+			server: ['--[US]--', 'Mineplex US', 'Shotbow Network US', 'The Nexus MC US', '--[EU]--', 'Mineplex EU', 'Shotbow Network EU', 'The Nexus MC EU', '--[Unknown]--', 'Minecade', '----', 'Suggest a server (Run the block, disable popup blocker)']
 		},
 		url: 'http://Mrcomputer1.github.io/MinecraftServerCheckerExtension/'
 	};
