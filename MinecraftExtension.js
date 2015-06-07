@@ -16,12 +16,10 @@
 
     });
 	
-	ext.alertOnOldVersion = true;
-	
 	ext._shutdown = function() {};
 	
 	ext._getStatus = function() {
-		return {status:2, msg: 'Ready - Version 1.0.4 (Minecraft 1.8.6) - By: Mrcomputer1'};
+		return {status: 2, msg: 'Ready - 1.0.5 (Minecraft 1.8.7) - By: Mrcomputer1'};
 	};
 	
 	ext.isOnline = function(serverIP, serverPORT, callback) {
@@ -111,14 +109,10 @@
 			if(err) {alert("Something went wrong!");callback(0)}
 			
 			var p = 0;
-			if(version === "1.8.5-1.8"){
+			if(version === "1.8.7-1.8"){
 				p = 47;
-			}else if(version === "1.8.3-1.8"){
+			}else if(version === "1.8.5-1.8"){
 				p = 47;
-				if(ext.alertOnOldVersion === true){
-					alert("Please change 1.8.3-1.8 to 1.8.5-1.8 in the IS [] () [1.8.3-1.8 v] block");
-					ext.alertOnOldVersion = false;
-				}
 			}else if(version === "1.8-pre3"){
 				p = 46;
 			}else if(version === "1.8-pre2"){
@@ -156,7 +150,7 @@
 			
 			var s = "";
 			if(status.server.protocol === 47){
-				s = "1.8.5";
+				s = "1.8.7";
 			}else if(status.server.protocol === 46){
 				s = "1.8-pre3";
 			}else if(status.server.protocol === 45){
@@ -276,6 +270,18 @@
 		}
 	};
 	
+	ext.isBoolean = function(s){
+		if(s == "1"){
+			return true;
+		}else if(s == "0"){
+			return false;
+		}else if(s == "-1"){
+			return false;
+		}else{
+			return false;
+		}
+	};
+	
 	var descriptor = {
 		blocks: [
 			['R', 'Is %s %n online?', 'isOnline', '', 25565],
@@ -288,9 +294,10 @@
 			['R', 'Get Mojang Status %m.mojangStatus', 'getMojangStatus', 'minecraft.net'],
 			['r', 'Server IP %m.server', 'getServerIP', ''],
 			['r', 'Server Port %m.server', 'getServerPort', ''],
+			['b', '%s Turns is blocks into booleans', 'isBoolean', ''],
 		],
 		menus: {
-			mcVersion: ["1.8.5-1.8", "1.8-pre3", "1.8-pre2", "1.8-pre1", "1.7.10-1.7.6", "1.7.5-1.7.1"],
+			mcVersion: ["1.8.7-1.8", "1.8-pre3", "1.8-pre2", "1.8-pre1", "1.7.10-1.7.6", "1.7.5-1.7.1"],
 			mojangStatus: ["minecraft.net", "session.minecraft.net", "account.mojang.com", "auth.mojang.com", "skins.minecraft.net", "authserver.mojang.com", "sessionserver.mojang.com", "api.mojang.com", "textures.minecraft.net"],
 			server: ['--[US]--', 'Mineplex US', 'Shotbow Network US', 'The Nexus MC US', '--[EU]--', 'Mineplex EU', 'Shotbow Network EU', 'The Nexus MC EU', '--[Unknown]--', 'Minecade', '----', 'Suggest a server (Run the block, disable popup blocker)']
 		},
