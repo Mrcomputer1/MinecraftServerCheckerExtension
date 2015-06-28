@@ -1,5 +1,7 @@
 (function(ext) {
 	
+	ext.success = false;
+	
 	$.ajax({
 
         async:false,
@@ -7,10 +9,12 @@
         type:'GET',
 
         url:'https://mcapi.us/scripts/minecraft.js',
-
+		
         data:null,
         
-        success: function(){},
+        success: function(){ext.success = true;},
+		
+		error: function(){ext.success = false;},
 
         dataType:'script'
 
@@ -19,7 +23,11 @@
 	ext._shutdown = function() {};
 	
 	ext._getStatus = function() {
-		return {status: 2, msg: 'Ready - 1.0.5 (Minecraft 1.8.7) - By: Mrcomputer1'};
+		if(ext.success){
+			return {status: 2, msg: 'Ready - 1.0.6 (Minecraft 1.8.7) - By: Mrcomputer1'};
+		}else{
+			return {status: 1, msg: 'Failed to get the MCAPI.US Javascript file! Reload the page or check status.mcapi.us!'};
+		}
 	};
 	
 	ext.isOnline = function(serverIP, serverPORT, callback) {
