@@ -290,6 +290,56 @@
 		}
 	};
 	
+	ext.getLastOnline = function(serverIP, serverPORT, what, callback){
+		MinecraftAPI.getServerStatus(serverIP, {
+			port: serverPORT
+		}, function(err, status){
+			if(err) {alert("Something went wrong!");callback(0)}
+			
+			var d;
+			if(status.last_online == 0){
+				callback(-1);
+			}else{
+				var d = new Date(status.last_online*1000);
+			}
+			
+			var m = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+			var year = d.getFullYear();
+			var month = m[d.getMonth()];
+			var monthid = d.getMonth() + 1;
+			var day = d.getDate();
+			var hour = d.getHours();
+			var min = d.getMinutes();
+			var sec = d.getSeconds();
+			
+			if(what == "time"){
+				callback(hour + ":" + min + ":" + sec);
+			}else if(what == "date (D/M/Y)"){
+				callback(day + "/" + monthid + "/" + year);
+			}else if(what == "date (M/D/Y)"){
+				callback(monthid + "/" + day + "/" + year);
+			}else if(what == "day"){
+				callback(day);
+			}else if(what == "month (name)"){
+				callback(month);
+			}else if(what == "month (id)"){
+				callback(monthid);
+			}else if(what == "year"){
+				callback(year);
+			}else if(what == "hour"){
+				callback(hour);
+			}else if(what == "minutes"){
+				callback(min);
+			}else if(what == "seconds"){
+				callback(sec);
+			}else{
+				alert("Something went wrong!");
+				callback(-1);
+			}
+			
+		});
+	};
+	
 	var descriptor = {
 		blocks: [
 			['R', 'Is %s %n online?', 'isOnline', '', 25565],
@@ -303,14 +353,17 @@
 			['r', 'Server IP %m.server', 'getServerIP', ''],
 			['r', 'Server Port %m.server', 'getServerPort', ''],
 			['b', '%s Turns is blocks into booleans', 'isBoolean', ''],
+			['R', 'Last recorded online %s %n %m.lastOnlineDates', 'getLastOnline', '', 25565, 'date (D/M/Y)'],
 		],
 		menus: {
 			mcVersion: ["1.8.7-1.8", "1.8-pre3", "1.8-pre2", "1.8-pre1", "1.7.10-1.7.6", "1.7.5-1.7.1"],
 			mojangStatus: ["minecraft.net", "session.minecraft.net", "account.mojang.com", "auth.mojang.com", "skins.minecraft.net", "authserver.mojang.com", "sessionserver.mojang.com", "api.mojang.com", "textures.minecraft.net"],
-			server: ['--[US]--', 'Mineplex US', 'Shotbow Network US', 'The Nexus MC US', '--[EU]--', 'Mineplex EU', 'Shotbow Network EU', 'The Nexus MC EU', '--[Unknown]--', 'Minecade', '----', 'Suggest a server (Run the block, disable popup blocker)']
+			server: ['--[US]--', 'Mineplex US', 'Shotbow Network US', 'The Nexus MC US', '--[EU]--', 'Mineplex EU', 'Shotbow Network EU', 'The Nexus MC EU', '--[Unknown]--', 'Minecade', '----', 'Suggest a server (Run the block, disable popup blocker)'],
+			lastOnlineDates: ['time', 'date (D/M/Y)', 'date (M/D/Y)', 'day', 'month (name)', 'month (id)', 'year', 'hour', 'minutes', 'seconds']
 		},
 		url: 'http://Mrcomputer1.github.io/MinecraftServerCheckerExtension/'
 	};
 	
 	ScratchExtensions.register('Minecraft Server Checker', descriptor, ext);
 })({});
+
