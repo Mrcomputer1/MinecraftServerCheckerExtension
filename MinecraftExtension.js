@@ -24,7 +24,7 @@
 	
 	ext._getStatus = function() {
 		if(ext.success){
-			return {status: 2, msg: 'Ready - 1.0.6 (Minecraft 1.8.7) - By: Mrcomputer1'};
+			return {status: 2, msg: 'Ready - 1.0.7 (Minecraft 15w31c) - By: Mrcomputer1'};
 		}else{
 			return {status: 1, msg: 'Failed to get the MCAPI.US Javascript file! Reload the page or check status.mcapi.us!'};
 		}
@@ -117,7 +117,13 @@
 			if(err) {alert("Something went wrong!");callback(0)}
 			
 			var p = 0;
-			if(version === "1.8.7-1.8"){
+			if(version === "15w31c"){
+				p = 51;
+			}else if(version === "15w31b"){
+				p = 50;
+			}else if(version === "15w31a"){
+				p = 49;
+			}else if(version === "1.8.8-1.8"){
 				p = 47;
 			}else if(version === "1.8.5-1.8"){
 				p = 47;
@@ -157,8 +163,14 @@
 			if(err) {alert("Something went wrong!");callback(0)}
 			
 			var s = "";
-			if(status.server.protocol === 47){
-				s = "1.8.7";
+			if(status.server.protocol === 51){
+				s = "15w31c";
+			}else if(status.server.protocol === 50){
+				s = "15w31b";
+			}else if(status.server.protocol === 49){
+				s = "15w31a";
+			}else if(status.server.protocol === 47){
+				s = "1.8.8";
 			}else if(status.server.protocol === 46){
 				s = "1.8-pre3";
 			}else if(status.server.protocol === 45){
@@ -356,7 +368,7 @@
 			['R', 'Last recorded online %s %n %m.lastOnlineDates', 'getLastOnline', '', 25565, 'date (D/M/Y)'],
 		],
 		menus: {
-			mcVersion: ["1.8.7-1.8", "1.8-pre3", "1.8-pre2", "1.8-pre1", "1.7.10-1.7.6", "1.7.5-1.7.1"],
+			mcVersion: ["15w31c", "15w31b", "15w31a", "1.8.8-1.8", "1.8-pre3", "1.8-pre2", "1.8-pre1", "1.7.10-1.7.6", "1.7.5-1.7.1"],
 			mojangStatus: ["minecraft.net", "session.minecraft.net", "account.mojang.com", "auth.mojang.com", "skins.minecraft.net", "authserver.mojang.com", "sessionserver.mojang.com", "api.mojang.com", "textures.minecraft.net"],
 			server: ['--[US]--', 'Mineplex US', 'Shotbow Network US', 'The Nexus MC US', '--[EU]--', 'Mineplex EU', 'Shotbow Network EU', 'The Nexus MC EU', '--[Unknown]--', 'Minecade', '----', 'Suggest a server (Run the block, disable popup blocker)'],
 			lastOnlineDates: ['time', 'date (D/M/Y)', 'date (M/D/Y)', 'day', 'month (name)', 'month (id)', 'year', 'hour', 'minutes', 'seconds']
