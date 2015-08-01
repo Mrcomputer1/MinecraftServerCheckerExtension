@@ -24,7 +24,7 @@
 	
 	ext._getStatus = function() {
 		if(ext.success){
-			return {status: 2, msg: 'Ready - 1.0.7 (Minecraft 15w31c) - By: Mrcomputer1'};
+			return {status: 2, msg: 'Ready - 1.0.8 (Minecraft 15w31c) - By: Mrcomputer1'};
 		}else{
 			return {status: 1, msg: 'Failed to get the MCAPI.US Javascript file! Reload the page or check status.mcapi.us!'};
 		}
