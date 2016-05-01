@@ -117,8 +117,12 @@
 			if(err) {alert("Something went wrong!");callback(0)}
 			
 			var p = 0;
-			if(version === "1.9-pre1"){
-				p = 103;
+			if(version === "1.9.2"){
+				p = 109;
+			}else if(version === "1.9.1"){
+				p = 108;
+			}else if(version === "1.9"){
+				p = 107;
 			}else if(version === "1.8.8-1.8"){
 				p = 47;
 			}else if(version === "1.8.5-1.8"){
@@ -158,9 +162,13 @@
 		}, function(err, status){
 			if(err) {alert("Something went wrong!");callback(0)}
 			
-			var s = "";
-			if(status.server.protcol === 103){
-				s = "1.9-pre1";
+			var s = ""; //add 109 1.9.2
+			if(server.status.protocol == 109){
+				s = "1.9.2";
+			}else if(status.server.protocol == 108){
+				s = "1.9.1"
+			}else if(status.server.protocol === 107){
+				s = "1.9";
 			}else if(status.server.protocol === 47){
 				s = "1.8.8";
 			}else if(status.server.protocol === 46){
@@ -231,12 +239,12 @@
 			return "us.shotbow.net";
 		}else if(server === "Shotbow Network EU"){
 			return "eu.shotbow.net";
-		}else if(server === "Minecade"){
-			return "mineca.de";
 		}else if(server === "The Nexus MC US"){
 			return "hub.thenexusmc.com";
 		}else if(server === "The Nexus MC EU"){
 			return "eu.thenexusmc.com";
+		}else if(server === "Hypixel"){
+			return "mc.hypixel.net";
 			//Other //V//
 		}else if(server === "--[US]--"){
 			return "";
@@ -261,11 +269,11 @@
 			return 25565;
 		}else if(server === "Shotbow Network EU"){
 			return 25565;
-		}else if(server === "Minecade"){
-			return 25565;
 		}else if(server === "The Nexus MC US"){
 			return 25565;
 		}else if(server === "The Nexus MC EU"){
+			return 25565;
+		}else if(server === "Hypixel"){
 			return 25565;
 			//Other //V//
 		}else if(server === "--[US]--"){
@@ -360,9 +368,9 @@
 			['R', 'Last recorded online %s %n %m.lastOnlineDates', 'getLastOnline', '', 25565, 'date (D/M/Y)'],
 		],
 		menus: {
-			mcVersion: ["1.9-pre1", "1.8.8-1.8", "1.8-pre3", "1.8-pre2", "1.8-pre1", "1.7.10-1.7.6", "1.7.5-1.7.1"],
+			mcVersion: ["1.9.2", "1.9.1", "1.9", "1.8.8-1.8", "1.8-pre3", "1.8-pre2", "1.8-pre1", "1.7.10-1.7.6", "1.7.5-1.7.1"],
 			mojangStatus: ["minecraft.net", "session.minecraft.net", "account.mojang.com", "auth.mojang.com", "skins.minecraft.net", "authserver.mojang.com", "sessionserver.mojang.com", "api.mojang.com", "textures.minecraft.net"],
-			server: ['--[US]--', 'Mineplex US', 'Shotbow Network US', 'The Nexus MC US', '--[EU]--', 'Mineplex EU', 'Shotbow Network EU', 'The Nexus MC EU', '--[Unknown]--', 'Minecade', '----', 'Suggest a server (Run the block, disable popup blocker)'],
+			server: ['--[US]--', 'Mineplex US', 'Shotbow Network US', 'The Nexus MC US', '--[EU]--', 'Mineplex EU', 'Shotbow Network EU', 'The Nexus MC EU', '--[Unknown]--', 'Hypixel', '----', 'Suggest a server (Run the block, disable popup blocker)'],
 			lastOnlineDates: ['time', 'date (D/M/Y)', 'date (M/D/Y)', 'day', 'month (name)', 'month (id)', 'year', 'hour', 'minutes', 'seconds']
 		},
 		url: 'http://Mrcomputer1.github.io/MinecraftServerCheckerExtension/'
