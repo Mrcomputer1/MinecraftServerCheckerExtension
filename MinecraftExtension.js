@@ -127,12 +127,6 @@
 				p = 47;
 			}else if(version === "1.8.5-1.8"){
 				p = 47;
-			}else if(version === "1.8-pre3"){
-				p = 46;
-			}else if(version === "1.8-pre2"){
-				p = 45;
-			}else if(version === "1.8-pre1"){
-				p = 44;
 			}else if(version === "1.7.10-1.7.6"){
 				p = 5;
 			}else if(version === "1.7.5-1.7.1pre"){
@@ -171,12 +165,6 @@
 				s = "1.9";
 			}else if(status.server.protocol === 47){
 				s = "1.8.8";
-			}else if(status.server.protocol === 46){
-				s = "1.8-pre3";
-			}else if(status.server.protocol === 45){
-				s = "1.8-pre2";
-			}else if(status.server.protocol === 44){
-				s = "1.8-pre1";
 			}else if(status.server.protocol === 5){
 				s = "1.7.10-1.7.6";
 			}else if(status.server.protocol === 4){
@@ -368,7 +356,7 @@
 			['R', 'Last recorded online %s %n %m.lastOnlineDates', 'getLastOnline', '', 25565, 'date (D/M/Y)'],
 		],
 		menus: {
-			mcVersion: ["1.9.2", "1.9.1", "1.9", "1.8.8-1.8", "1.8-pre3", "1.8-pre2", "1.8-pre1", "1.7.10-1.7.6", "1.7.5-1.7.1"],
+			mcVersion: ["1.9.2", "1.9.1", "1.9", "1.8.8-1.8", "1.7.10-1.7.6", "1.7.5-1.7.1"],
 			mojangStatus: ["minecraft.net", "session.minecraft.net", "account.mojang.com", "auth.mojang.com", "skins.minecraft.net", "authserver.mojang.com", "sessionserver.mojang.com", "api.mojang.com", "textures.minecraft.net"],
 			server: ['--[US]--', 'Mineplex US', 'Shotbow Network US', 'The Nexus MC US', '--[EU]--', 'Mineplex EU', 'Shotbow Network EU', 'The Nexus MC EU', '--[Unknown]--', 'Hypixel', '----', 'Suggest a server (Run the block, disable popup blocker)'],
 			lastOnlineDates: ['time', 'date (D/M/Y)', 'date (M/D/Y)', 'day', 'month (name)', 'month (id)', 'year', 'hour', 'minutes', 'seconds']
