@@ -359,7 +359,7 @@
 			['R', 'Online players of %s %n', 'getOnlinePlayers', '', 25565],
 			['R', 'Max players of %s %n', 'getMaxPlayers', '', 25565],
 			['R', 'Server Software of %s %n', 'getServerSoftware', '', 25565],
-			['R', 'Is %s %n %m.mcVersion', 'isVersion', '', 25565, '1.8.8-1.8'],
+			['R', 'Is %s %n %m.mcVersion', 'isVersion', '', 25565, '1.9.2'],
 			['R', 'Get Version %s %n', 'getVersion', '', 25565],
 			['R', 'Get Mojang Status %m.mojangStatus', 'getMojangStatus', 'minecraft.net'],
 			['r', 'Server IP %m.server', 'getServerIP', ''],
