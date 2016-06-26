@@ -1,0 +1,171 @@
+{
+	"protocols": [
+		{
+			"protocol": 4,
+			"versionString": "1.7.2-1.7.5",
+			"versions": ["1.7.1-pre", "1.7.2", "1.7.3-pre", "1.7.4", "1.7.5"],
+			"show": true
+		},
+		{
+			"protocol": 5,
+			"versionString": "1.7.6-1.7.10",
+			"versions": ["1.7.6", "1.7.7", "1.7.8", "1.7.9", "1.7.10", "14w02a"],
+			"show": true
+		},
+		{
+			"protocol": 47,
+			"versionString": "1.8-1.8.9",
+			"versions": ["1.8", "1.8.1", "1.8.2", "1.8.3", "1.8.4", "1.8.5", "1.8.6", "1.8.7", "1.8.8",
+			"1.8.9"],
+			"show": true
+		},
+		{
+			"protocol": 107,
+			"versionString": "1.9-1.9.1pre1",
+			"versions": ["1.9.1-pre", "1.9.2", "1.9.3-pre", "1.9.4", "1.9.5"],
+			"show": true
+		},
+		{
+			"protocol": 108,
+			"versionString": "1.9.1pre2-1.9.1",
+			"versions": ["1.9.1-pre2", "1.9.1-pre3", "1.9.1"],
+			"show": true
+		},
+		{
+			"protocol": 109,
+			"versionString": "1.9.2-1.9.3pre1",
+			"versions": ["1.9.2", "16w14a", "16w15a", "16w15b", "1.9.3-pre1"],
+			"show": true
+		},
+		{
+			"protocol": 110,
+			"versionString": "1.9.3pre2-1.9.4",
+			"versions": ["1.9.3-pre2", "1.9.3-pre3", "1.9.3", "1.9.4"],
+			"show": true
+		},
+		{
+			"protocol": 210,
+			"versionString": "1.10-1.10.2",
+			"versions": ["1.10", "1.10.1", "1.10.2"],
+			"show": true
+		}
+	],
+	"protocolToData": {
+		4: 0,
+		5: 1,
+		47: 2,
+		107: 3,
+		108: 4,
+		109: 5,
+		110: 6,
+		210: 7
+	},
+	"versionToData": {
+		"1.7.2-1.7.5": 0,
+		"1.7.6-1.7.10": 1,
+		"1.8-1.8.9": 2,
+		"1.9-1.9.1pre1": 3,
+		"1.9.1pre2-1.9.1": 4,
+		"1.9.2-1.9.3pre1": 5,
+		"1.9.3pre2-1.9.4": 6,
+		"1.10-1.10.2": 7
+	},
+	"mojangServices": [
+		{
+			"serviceID": 0,
+			"serviceName": "minecraft.net"
+		},
+		{
+			"serviceID": 1,
+			"serviceName": "session.minecraft.net"
+		},
+		{
+			"serviceID": 2,
+			"serviceName": "account.mojang.com"
+		},
+		{
+			"serviceID": 3,
+			"serviceName": "auth.mojang.com"
+		},
+		{
+			"serviceID": 4,
+			"serviceName": "skins.minecraft.net"
+		},
+		{
+			"serviceID": 5,
+			"serviceName": "authserver.mojang.com"
+		},
+		{
+			"serviceID": 6,
+			"serviceName": "sessionserver.mojang.com"
+		},
+		{
+			"serviceID": 7,
+			"serviceName": "api.mojang.com"
+		},
+		{
+			"serviceID": 8,
+			"serviceName": "textures.minecraft.net"
+		},
+		{
+			"serviceID": 9,
+			"serviceName": "mojang.com"
+		}
+	],
+	"mojangServiceNameToData": {
+		"minecraft.net": 0,
+		"session.minecraft.net": 1,
+		"account.mojang.com": 2,
+		"auth.mojang.com": 3,
+		"skins.minecraft.net": 4,
+		"authserver.mojang.com": 5,
+		"sessionserver.mojang.com": 6,
+		"api.mojang.com": 7,
+		"textures.minecraft.net": 8,
+		"mojang.com": 9
+	},
+	"servers": [
+		{
+			"name": "Mineplex US",
+			"ip": "us.mineplex.com",
+			"port": 25565,
+			"type": "us"
+		},
+		{
+			"name": "Mineplex EU",
+			"ip": "eu.mineplex.com",
+			"port": 25565,
+			"type": "eu"
+		},
+		{
+			"name": "Shotbow Network US",
+			"ip": "us.shotbow.net",
+			"port": 25565,
+			"type": "us"
+		},
+		{
+			"name": "Shotbow Network EU",
+			"ip": "eu.shotbow.net",
+			"port": 25565,
+			"type": "eu"
+		},
+		{
+			"name": "The Nexus MC",
+			"ip": "hub.thenexusmc.com",
+			"port": 25565,
+			"type": "other"
+		},
+		{
+			"name": "Hypixel",
+			"ip": "mc.hypixel.net",
+			"port": 25565,
+			"type": "other"
+		},
+		{
+			"name": "QuatCraft",
+			"ip": "quatcraft.mcnode.net",
+			"port": 25565,
+			"type": "whitelisted"
+		}
+	]
+}
